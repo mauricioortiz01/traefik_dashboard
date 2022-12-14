@@ -63,7 +63,7 @@
     entryPoints:
       - web
     routes:
-      - match: Host(`ad86b5bfb408c459f83ebad829f9769b-e55249426b7df615.elb.us-east-2.amazonaws.com`)
+      - match: Host(`ad86b5bfb408c459f83ebad829f9769b-e55249426b7df615.elb.us-east-2.amazonaws.com`) && (PathPrefix(`/dashboard`) || PathPrefix(`/api`))
         kind: Rule
         services:
           - name: api@internal
